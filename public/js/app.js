@@ -1,5 +1,5 @@
 // let card1 = new C
-
+let bet;
 let hand = [];
 let dealerHand = [];
 let total = 0;
@@ -9,6 +9,16 @@ let dealerTotal = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   // Create and shuffle a new deck of cards
+  // bet = parseInt(prompt('How much do you wanna bet?'));
+  let betBtn = document.getElementById('submit');
+  let betClass = document.getElementById('bet');
+  betBtn.addEventListener('click', function() {
+    betValue = document.getElementById('betvalue');
+    bet = betValue.value;
+    betClass.style.display = 'none';
+    betValue.style.display = 'none';
+  })
+
   const deck = new Deck();
   const hitBtn = document.getElementById('hitman');
   const standBtn = document.getElementById('standbtn');
@@ -38,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (total > 21) {
       winlose.innerHTML = ('You lose');
     } else if (total === 21) {
-      winlose.innerHTML = ('You win');
+      winlose.innerHTML = ('You win $' + bet * 2);
     }
 
     let playerScore = document.getElementById('score');
@@ -55,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
       let dealerScore = document.getElementById('dealerscore');
       dealerScore.innerHTML = 'Score: ' + dealerTotal;
     } else if (dealerTotal > 21) {
-      winlose.innerHTML = ('You win');
+      winlose.innerHTML = ('You win $' + bet * 2);
     } else {
       if (21 - dealerTotal < 21 - total) {
         winlose.innerHTML = ('You lose');
       } else {
-        winlose.innerHTML = ('You win');
+        winlose.innerHTML = ('You win $' + bet * 2);
       }
     }
   });
