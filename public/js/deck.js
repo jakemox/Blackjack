@@ -4,10 +4,10 @@
 function randint(min, max) {
   return Math.round(min + Math.random() * (max - min));
 }
-
 /*
  * The deck of cards to deal from.
- */
+ */ 
+
 class Deck {
   constructor() {
     this.cards = [
@@ -76,5 +76,9 @@ class Deck {
       this.cards[i] = this.cards[j];
       this.cards[j] = swap;
     }
+  }
+
+  deal() {
+    return this.cards.pop();
   }
 }

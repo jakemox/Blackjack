@@ -20,6 +20,13 @@ body {
   margin: 0 auto;
 }
 
+.winlose {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  font-family: sans-serif;
+}
+
 .cards {
   display: flex;
   height: $card-height + 18px;
