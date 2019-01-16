@@ -11,19 +11,24 @@ body {
 }
 
 .bet {
-  width: 500px;
+  width: 30vw;
+  height: 160px;
   margin: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 30px;
+  font-size: 24px;
+  position: absolute;
+  left: 35vw;
+  top: calc(50vh - 80px);
 }
 
-input {
+select {
   height: 35px;
-  width: 482px;
+  width: 200px;
   margin: auto;
 }
 
@@ -90,4 +95,8 @@ button {
     transform: none;
     cursor: default;
   }
+}
+
+.submit {
+  width: 200px;
 }
